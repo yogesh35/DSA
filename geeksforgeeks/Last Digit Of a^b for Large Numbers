@@ -1,0 +1,15 @@
+class Solution:
+    def getLastDigit(self, a, b):
+        ans = 1
+        a, b = int(a), int(b)  
+        if b == 0: return 1  # anything power 0 is 1.
+        if b%4 == 0:
+            b = 4
+        else:
+            b = b%4
+            
+        # at max the loop runs for 4 times
+        for i in range(b):
+            ans*= a
+            
+        return ans%10
