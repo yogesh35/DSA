@@ -1,0 +1,12 @@
+#User function Template for python
+class Solution:
+    def evenlyDivides(self, n):
+        n=str(N)
+        count=0
+        for i in n:
+            if int(i)==0:
+                continue
+            elif N%int(i)==0:
+                count+=1
+                
+        return count
