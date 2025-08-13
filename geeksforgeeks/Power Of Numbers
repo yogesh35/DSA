@@ -1,0 +1,6 @@
+class Solution:
+    def reverseexponentiation(self, n):
+        reversed_n = int(str(n)[::-1])
+        result = n ** reversed_n
+        
+        return result
