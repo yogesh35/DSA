@@ -1,0 +1,13 @@
+#User function Template for python3
+
+class Solution:
+    def armstrongNumber (self, n):
+        number = str(n)
+        
+        digits = len(number)
+        output = 0
+        
+        for i in number:
+            output += int(i) ** digits
+            
+        return output == n
