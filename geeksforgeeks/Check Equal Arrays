@@ -1,0 +1,23 @@
+class Solution:
+    def checkEqual(self, a, b) -> bool:
+        # Step 1: Length check
+        if len(a) != len(b):
+            return False
+
+        # Step 2: Frequency dictionary
+        freq = {}
+
+        # Count frequencies in array a
+        for num in a:
+            freq[num] = freq.get(num, 0) + 1
+
+        # Step 3: Decrease frequencies using array b
+        for num in b:
+            if num not in freq:   # element not present
+                return False
+            freq[num] -= 1
+            if freq[num] == 0:    # remove when count is zero
+                del freq[num]
+
+        # Step 4: If freq dict is empty → arrays are equal
+        return len(freq) == 0
