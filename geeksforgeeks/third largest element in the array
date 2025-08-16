@@ -1,0 +1,28 @@
+class Solution:
+    def thirdLargest(self, arr):
+        n = len(arr)
+        
+        # If less than 3 elements, return -1
+        if n < 3:
+            return -1
+        
+        # Initialize the three largest elements
+        first = second = third = float('-inf')
+        
+        for num in arr:
+            # Update first, second, third accordingly
+            if num > first:
+                third = second
+                second = first
+                first = num
+            elif num > second:
+                third = second
+                second = num
+            elif num > third:
+                third = num
+        
+        # If third remains -inf, that means all elements were same
+        if third == float('-inf'):
+            return first   # Example: [5,5,5]
+        
+        return third
